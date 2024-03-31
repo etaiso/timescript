@@ -20,6 +20,13 @@
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   },
-  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etaiso/timescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/etaiso/timescript/issues"
+  },
+  "homepage": "https://github.com/etaiso/timescript#readme",
   "description": ""
 }
