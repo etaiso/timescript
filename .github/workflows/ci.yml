@@ -3,27 +3,39 @@
 name: Continuous Integration Workflow
 
 # Trigger this workflow whenever a new PR is created on the main branch
-on: 
-    pull_request: 
-        branches: main
+on:
+  pull_request:
+    branches: main
 
 # Set some defaults
 defaults:
-    run:
-        shell: bash
-        working-directory: ./
-        
+  run:
+    shell: bash
+    working-directory: ./
+
 # Jobs run in parallel by default
 jobs:
-    test:
-        name: 'Run unit tests'
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-              name: 'Checkout repository'
+  test:
+    name: "Run unit tests"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: "Checkout repository"
 
-            - name: 'Install Dependencies'
-              run: npm ci
+      - name: "Install Dependencies"
+        run: npm ci
 
-            - name: 'Run tests'
-              run: npm test
+      - name: "Run tests"
+        run: npm test
+  lint:
+    name: "Run linter"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: "Checkout repository"
+
+      - name: "Install Dependencies"
+        run: npm ci
+
+      - name: "Run linter"
+        run: npm run lint
