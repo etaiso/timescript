@@ -2,7 +2,7 @@
   "type": "module",
   "types": "./dist/@types",
   "name": "@etaiso/timescript",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./dist/index.js",
   "scripts": {
     "test": "vitest",
